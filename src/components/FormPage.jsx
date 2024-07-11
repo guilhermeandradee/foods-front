@@ -2,11 +2,14 @@ import React from "react";
 import './FormPage.css'
 import axios from "axios";
 
+import { IoIosCloseCircleOutline } from "react-icons/io";
+
+
 import { useState } from "react";
 
 import { baseUrl } from "./Main";
 
-const FormPage = () => {
+const FormPage = ({addCardIsVisible, setCardIsVisible}) => {
 
 
     const [formData, setFormData] = useState({
@@ -47,8 +50,10 @@ const FormPage = () => {
             
             <form className="px-0 py-2 col-8 col-md-8 d-flex flex-column justify-content-center" >
                 <div className="mb-3 ">
-                    <label htmlFor="name" className="form-label text-light">Nome</label>
+                    <label
+                     htmlFor="name" className="form-label text-light">Nome</label>
                     <input
+                    placeholder="Banana"
                         type="text"
                         className="form-control"
                         id="name"
@@ -60,6 +65,7 @@ const FormPage = () => {
                 <div className="mb-3">
                     <label htmlFor="price" className="form-label text-light">Preço</label>
                     <input
+                    placeholder="12,5"
                         type="float"
                         className="form-control"
                         id="price"
@@ -71,6 +77,7 @@ const FormPage = () => {
                 <div className="mb-3">
                     <label htmlFor="image" className="form-label text-light">Imagem</label>
                     <input
+                    placeholder="https://urldaimagem.com"
                         type="text"
                         className="form-control"
                         id="image"
@@ -79,7 +86,8 @@ const FormPage = () => {
                         required
                     />
                 </div>
-                <button className="enviar-btn btn w-50 mt-4" onClick={handleSubmit}>Enviar</button>
+                <button className="enviar-btn p-2 rounded w-50 mt-4" onClick={handleSubmit}>Enviar</button>
+                <IoIosCloseCircleOutline className="exit-add-btn mt-5" onClick={() => setCardIsVisible(false)} />
             </form>
             
         </div>

@@ -41,7 +41,7 @@ const Main = () => {
                 <button className="add-btn col-5 col-sm-2 btn btn-light rounded"  onClick={() => setCardIsVisible(true)}>Adicionar</button>
             </div>
 
-            { addCardIsVisible && <FormPage/> }
+            { addCardIsVisible && <FormPage addCardIsVisible={addCardIsVisible} setCardIsVisible={setCardIsVisible} /> }
 
             <div className="container-fluid ">
                 <div className="row d-flex justify-content-center">

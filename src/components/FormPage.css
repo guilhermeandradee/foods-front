@@ -28,10 +28,32 @@
 .enviar-btn {
     margin: auto;
     background-color: #F6F7F8 !important;
-    transition: .5s;
+
+    border: none;
+
+    transition: .3s;
+    cursor: pointer;
 }
 
 
 .enviar-btn:hover {
-    background-color: #f6f7f8bb !important;
+    background-color: #afcff0 !important;
+}
+
+.exit-add-btn {
+    height: 4%;
+    width: 4%;
+
+    min-width: 30px;
+
+    margin: auto;
+
+    color: #F6F7F8;
+    transition: .3s;
+    cursor: pointer;
+}
+
+.exit-add-btn:hover {
+
+    color: #afcff0;
 }
