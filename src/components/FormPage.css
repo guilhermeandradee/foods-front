@@ -1,0 +1,37 @@
+.w-100 {
+    width: 100%;
+}
+
+.w-80 {
+    width: 80%;
+}
+.w-70 {
+    width: 70%;
+}
+
+
+.form-page {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 90vh;
+    margin-top: -1.5rem;
+
+    background-color: #715442; /* Semi-transparent background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000; /* Ensures the component is on top */
+}
+
+.enviar-btn {
+    margin: auto;
+    background-color: #F6F7F8 !important;
+    transition: .5s;
+}
+
+
+.enviar-btn:hover {
+    background-color: #f6f7f8bb !important;
+}
