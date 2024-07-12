@@ -13,9 +13,9 @@ const FormPage = ({addCardIsVisible, setCardIsVisible}) => {
 
 
     const [formData, setFormData] = useState({
-            title: '',
-            price: '',
-            image: ''
+            "title": '',
+            "price": '',
+            "image": ''
         });
 
         
