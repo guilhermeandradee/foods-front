@@ -9,13 +9,13 @@ import { useState } from "react";
 
 import { baseUrl } from "./Main";
 
-const FormPage = ({addCardIsVisible, setCardIsVisible}) => {
+const FormPage = ({addCardIsVisible, setCardIsVisible, editItem, itemId, changeCloseCard}) => {
 
 
     const [formData, setFormData] = useState({
-            "title": '',
-            "price": '',
-            "image": ''
+            "title": null,
+            "price": null,
+            "image": null
         });
 
         
@@ -29,23 +29,42 @@ const FormPage = ({addCardIsVisible, setCardIsVisible}) => {
         console.log(formData)
     };
 
-    const handleSubmit = async (e) => {
-        try {
-            const response = await axios.post(`${baseUrl}/foods`, formData);
-            console.log('Resposta do servidor:', response.data);
-
-            setFormData({
-                title: '',
-                price: '',
-                image: ''
-            });
-
-        } catch (error) {
-            console.error('Erro ao enviar dados:', error);
+    const handleSubmit = async (id) => {
+        if(editItem === true) {
+            try {
+                const response = await axios.put(`${baseUrl}/foods/${id}`, formData);
+                console.log('Resposta do servidor:', response.data);
+    
+                setFormData({
+                    title: '',
+                    price: '',
+                    image: ''
+                });
+    
+            } catch (error) {
+                console.error('Erro ao enviar dados:', error);
+            }
+        } else 
+        if(editItem === false || null){
+            try {
+                const response = await axios.post(`${baseUrl}/foods`, formData);
+                console.log('Resposta do servidor:', response.data);
+    
+                setFormData({
+                    title: '',
+                    price: '',
+                    image: ''
+                });
+    
+            } catch (error) {
+                console.error('Erro ao enviar dados:', error);
+            }
         }
+
+        
     };
 
-    return (
+    return(
         <div className="form-page rounded row m-0 p-0">
             
             <form className="px-0 py-2 col-8 col-md-8 d-flex flex-column justify-content-center" >
@@ -59,7 +78,7 @@ const FormPage = ({addCardIsVisible, setCardIsVisible}) => {
                         id="name"
                         name="title"
                         onChange={handleChange}
-                        required
+                        
                     />
                 </div>
                 <div className="mb-3">
@@ -71,7 +90,7 @@ const FormPage = ({addCardIsVisible, setCardIsVisible}) => {
                         id="price"
                         name="price"
                         onChange={handleChange}
-                        required
+                        
                     />
                 </div>
                 <div className="mb-3">
@@ -83,15 +102,16 @@ const FormPage = ({addCardIsVisible, setCardIsVisible}) => {
                         id="image"
                         name="image"
                         onChange={handleChange}
-                        required
+                        
                     />
                 </div>
-                <button className="enviar-btn p-2 rounded w-50 mt-4" onClick={handleSubmit}>Enviar</button>
-                <IoIosCloseCircleOutline className="exit-add-btn mt-5" onClick={() => setCardIsVisible(false)} />
+                <button className="enviar-btn p-2 rounded w-50 mt-4" onClick={() => handleSubmit(itemId)}>Enviar</button>
+                <IoIosCloseCircleOutline className="exit-add-btn mt-5" onClick={() => editItem ? changeCloseCard() : setCardIsVisible(false)} />
             </form>
             
         </div>
     )
+        
 }
 
 export default FormPage

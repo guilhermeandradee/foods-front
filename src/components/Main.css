@@ -1,6 +1,3 @@
-main.cont {
-    position: relative;
-}
 
 .lalala {
     height: 100%;
@@ -9,9 +6,15 @@ main.cont {
 .w-100 {
     width: 100%;
 }
-/* .arrow {
-    width: 5%;
-} */
+
+.brown-color {
+    color: #715442 !important;
+}
+
+/*   commom   */
+
+
+
 
 .add-btn {
     background-color: #F6F7F8;
@@ -19,12 +22,16 @@ main.cont {
 }
 
 .product-container {
-    background-color: rgb(27, 85, 0);
+    position: relative;
+    background-color: rgb(85, 0, 0);
+
+    border-radius: 5px;
 }
 
 .img-product {
-    /* background-color: rgb(233, 233, 0); */
     height: 50vh;
+
+    cursor: pointer;
 }
 .imagemmm {
     background-image: url(https://images.pexels.com/photos/2872755/pexels-photo-2872755.jpeg?auto=compress&cs=tinysrgb&w=600);
