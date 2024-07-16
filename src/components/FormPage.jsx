@@ -9,7 +9,7 @@ import { useState } from "react";
 
 import { baseUrl } from "./Main";
 
-const FormPage = ({addCardIsVisible, setCardIsVisible, editItem, itemId, changeCloseCard}) => {
+const FormPage = ({addCardIsVisible, setCardIsVisible, editItem, itemId, changeCloseCard, fetchData}) => {
 
 
     const [formData, setFormData] = useState({
@@ -43,6 +43,8 @@ const FormPage = ({addCardIsVisible, setCardIsVisible, editItem, itemId, changeC
     
             } catch (error) {
                 console.error('Erro ao enviar dados:', error);
+            } finally {
+                fetchData();
             }
         } else if(editItem === false || null){
             try {
@@ -61,6 +63,8 @@ const FormPage = ({addCardIsVisible, setCardIsVisible, editItem, itemId, changeC
     
             } catch (error) {
                 console.error('Erro ao enviar dados:', error);
+            } finally {
+                fetchData();
             }
         }
 

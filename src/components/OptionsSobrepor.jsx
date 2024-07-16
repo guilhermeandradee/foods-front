@@ -42,7 +42,7 @@ const OptionsSobrepor = ({ handleCloseOptionsClick, itemId, fetchData }) => {
             <h3 className="brown-color fs-5 fs-sm-4 option-btn" onClick={() => removeItem(itemId)} >Remover <IoRemoveCircleOutline/> </h3>
 
             { editCardisVisible && 
-                <FormPage editItem={true} itemId={itemId} changeCloseCard={changeCloseCard} />
+                <FormPage editItem={true} itemId={itemId} changeCloseCard={changeCloseCard} fetchData={fetchData} />
             }
         </div>
     )
