@@ -48,7 +48,7 @@ const FormPage = ({addCardIsVisible, setCardIsVisible, editItem, itemId, changeC
             }
         } else if(editItem === false || null){
             try {
-                const response = await axios.post(`${baseUrl}/foods`, formData, {
+                const response = await axios.post(`${baseUrl}/foods/criar`, formData, {
                     headers: {
                       'Content-Type': 'application/json',
                     },
