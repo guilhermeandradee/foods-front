@@ -36,24 +36,27 @@ const FormPage = ({addCardIsVisible, setCardIsVisible, editItem, itemId, changeC
                 console.log('Resposta do servidor:', response.data);
     
                 setFormData({
-                    title: '',
-                    price: '',
-                    image: ''
+                    "title": '',
+                    "price": '',
+                    "image": ''
                 });
     
             } catch (error) {
                 console.error('Erro ao enviar dados:', error);
             }
-        } else 
-        if(editItem === false || null){
+        } else if(editItem === false || null){
             try {
-                const response = await axios.post(`${baseUrl}/foods`, formData);
+                const response = await axios.post(`${baseUrl}/foods`, formData, {
+                    headers: {
+                      'Content-Type': 'application/json',
+                    },
+                  });
                 console.log('Resposta do servidor:', response.data);
     
                 setFormData({
-                    title: '',
-                    price: '',
-                    image: ''
+                    "title": '',
+                    "price": '',
+                    "image": ''
                 });
     
             } catch (error) {
