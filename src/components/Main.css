@@ -23,9 +23,11 @@
 
 .product-container {
     position: relative;
-    background-color: rgb(85, 0, 0);
+    background-color: #000;
 
     border-radius: 5px;
+
+    transition: .3s;
 }
 
 .img-product {
