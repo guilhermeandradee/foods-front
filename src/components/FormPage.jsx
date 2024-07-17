@@ -91,7 +91,7 @@ const FormPage = ({addCardIsVisible, setCardIsVisible, editItem, itemId, changeC
                 <div className="mb-3">
                     <label htmlFor="price" className="form-label text-light">Preço</label>
                     <input
-                    placeholder="12,5"
+                    placeholder="12.5"
                         type="float"
                         className="form-control"
                         id="price"
